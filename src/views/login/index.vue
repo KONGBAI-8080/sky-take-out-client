@@ -37,6 +37,7 @@ function handleLogin(formEl: FormInstance | undefined) {
     formEl.validate(async (valid:boolean)=>{
         if(valid){
             loading = true
+            console.log(formEl)
             await UserModule.Login(loginForm)
             .then((res:any)=>{
               if(String(res.code) === '1'){
